@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
 
     public float runSpeed = 40f;
     float horizontalMove = 0f;
+    bool jump = false;
+    bool crouch= false;
 
     // Start is called before the first frame update
     void Start()
@@ -19,15 +21,28 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        horizontalMove = Input.GetAxis("Horizontal") * runSpeed;
+        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
+        if(Input.GetButtonDown("Jump"))
+        {
+            jump = true;
+        }
 
+        if(Input.GetButtonDown("Crouch") || Input.GetAxisRaw("Vertical") <= -.7f)
+        {
+            crouch = true;
+
+        } else if (Input.GetButtonUp("Crouch") || Input.GetAxisRaw("Vertical") > -.7f)
+        {
+            crouch = false;
+        }
     }
 
     void FixedUpdate()
     {
         //move the character
-        controller.Move(horizontalMove * Time.fixedDeltaTime, false, false);
+        controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
+        jump = false;
     }
 }
 
