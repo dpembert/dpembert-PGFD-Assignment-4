@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -40,6 +41,18 @@ public class PlayerMovement : MonoBehaviour
         } else if (Input.GetButtonUp("Crouch") || Input.GetAxisRaw("Vertical") > -.7f)
         {
             crouch = false;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //Check if player collides with pit collider
+        if(collision.tag == "Pit")
+        {
+            //Reload the scene if player collides with pit
+            Scene scene;
+            scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name);
         }
     }
 
