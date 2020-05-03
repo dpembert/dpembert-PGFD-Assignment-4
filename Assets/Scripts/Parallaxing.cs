@@ -24,7 +24,7 @@ public class Parallaxing : MonoBehaviour
         parallaxScales = new float[backgrounds.Length];
         for (int i = 0; i < backgrounds.Length; i++)
         {
-            parallaxScales[i] = backgrounds[i].position.z ;
+            parallaxScales[i] = backgrounds[i].position.z;
         }
     }
     // Update is called once per frame

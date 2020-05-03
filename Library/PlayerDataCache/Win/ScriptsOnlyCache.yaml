@@ -3,7 +3,6 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - CharacterController2D
     - EndTrigger
-    - GameManager
     - Parallaxing
     - PlayerMovement
     Cinemachine.dll:
@@ -17,6 +16,7 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.SpriteShapeEditorAnalytics
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
+    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintPaletteClipboard
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
@@ -96,8 +96,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 38382}
     - Class: 114
       Script: {instanceID: 56986}
-    - Class: 114
-      Script: {instanceID: 57002}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -875,18 +873,12 @@ ScriptsOnlyBuild:
     className: Player
   - hash:
       serializedVersion: 2
-      Hash: 62e040979f1bcc5cfdb183bf34b809bf
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: EndTrigger
-  - hash:
-      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: GameManager
+    className: EndTrigger
   platform: 5
   scenePathNames:
   - Assets/Scenes/dpembert Cyberpunk Level.unity
-  playerPath: C:/Users/dpembert/Documents/dpembert PGFD Assignment 4/dpembert PGFD
-    Assignment 4.exe
+  playerPath: C:/Users/dpembert/Documents/dpembert PGFD Assignment 4/Build/dpembert
+    PGFD Assignment 4.exe
